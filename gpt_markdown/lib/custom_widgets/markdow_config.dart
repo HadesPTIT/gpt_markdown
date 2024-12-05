@@ -6,7 +6,6 @@ class GptMarkdownConfig {
     this.textDirection = TextDirection.ltr,
     this.onLinkTab,
     this.textAlign,
-    this.textScaler,
     this.latexWorkaround,
     this.latexBuilder,
     this.followLinkColor = false,
@@ -18,7 +17,6 @@ class GptMarkdownConfig {
   final TextDirection textDirection;
   final TextStyle? style;
   final TextAlign? textAlign;
-  final TextScaler? textScaler;
   final void Function(String url, String title)? onLinkTab;
   final String Function(String tex)? latexWorkaround;
   final Widget Function(
@@ -38,7 +36,6 @@ class GptMarkdownConfig {
     TextDirection? textDirection,
     final void Function(String url, String title)? onLinkTab,
     final TextAlign? textAlign,
-    final TextScaler? textScaler,
     final String Function(String tex)? latexWorkaround,
     final Widget Function(
             BuildContext context, String tex, TextStyle textStyle, bool inline)?
@@ -57,7 +54,6 @@ class GptMarkdownConfig {
       textDirection: textDirection ?? this.textDirection,
       onLinkTab: onLinkTab ?? this.onLinkTab,
       textAlign: textAlign ?? this.textAlign,
-      textScaler: textScaler ?? this.textScaler,
       latexWorkaround: latexWorkaround ?? this.latexWorkaround,
       latexBuilder: latexBuilder ?? this.latexBuilder,
       followLinkColor: followLinkColor ?? this.followLinkColor,
@@ -72,7 +68,6 @@ class GptMarkdownConfig {
     return Text.rich(
       span,
       textDirection: textDirection,
-      textScaler: textScaler,
       textAlign: textAlign,
       maxLines: maxLines,
       overflow: overflow,

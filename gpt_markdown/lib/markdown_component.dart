@@ -9,6 +9,8 @@ import 'package:gpt_markdown/custom_widgets/markdow_config.dart';
 import 'package:gpt_markdown/custom_widgets/unordered_ordered_list.dart';
 import 'md_widget.dart';
 
+const double kDefaultFontSize = 14.0;
+
 /// Markdown components
 abstract class MarkdownComponent {
   static List<MarkdownComponent> get components => [
@@ -420,7 +422,7 @@ class HighlightedText extends InlineMd {
           TextStyle(
             fontWeight: FontWeight.bold,
             background: Paint()
-              ..color = Theme.of(context).colorScheme.surfaceContainerHighest
+              ..color = Theme.of(context).colorScheme.surface
               ..strokeCap = StrokeCap.round
               ..strokeJoin = StrokeJoin.round,
           ),
@@ -831,9 +833,7 @@ class TableMd extends BlockMd {
                   decoration: (heading)
                       ? BoxDecoration(
                           color: (entry.key == 0)
-                              ? Theme.of(context)
-                                  .colorScheme
-                                  .surfaceContainerHighest
+                              ? Theme.of(context).colorScheme.surface
                               : null,
                         )
                       : null,

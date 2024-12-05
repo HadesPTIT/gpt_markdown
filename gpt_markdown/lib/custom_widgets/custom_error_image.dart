@@ -18,7 +18,7 @@ class CustomImageError extends LeafRenderObjectWidget {
   RenderObject createRenderObject(BuildContext context) {
     return RenderCustomImageError(
       iconColor ?? Theme.of(context).colorScheme.onSurfaceVariant,
-      backgroundColor ?? Theme.of(context).colorScheme.surfaceContainerHighest,
+      backgroundColor ?? Theme.of(context).colorScheme.surface,
       outlineColor ?? Theme.of(context).colorScheme.outline,
     );
   }
@@ -27,7 +27,7 @@ class CustomImageError extends LeafRenderObjectWidget {
   void updateRenderObject(
       BuildContext context, covariant RenderCustomImageError renderObject) {
     renderObject._backgroundColor = backgroundColor ??
-        Theme.of(context).colorScheme.surfaceContainerHighest;
+        Theme.of(context).colorScheme.surface;
     renderObject._iconColor =
         iconColor ?? Theme.of(context).colorScheme.onSurfaceVariant;
     renderObject._outlineColor =
@@ -133,7 +133,7 @@ class CustomImageLoading extends LeafRenderObjectWidget {
   RenderObject createRenderObject(BuildContext context) {
     return RenderCustomImageLoading(
       iconColor ?? Theme.of(context).colorScheme.onSurfaceVariant,
-      backgroundColor ?? Theme.of(context).colorScheme.surfaceContainerHighest,
+      backgroundColor ?? Theme.of(context).colorScheme.surface,
       outlineColor ?? Theme.of(context).colorScheme.outline,
       progress,
     );
@@ -143,7 +143,7 @@ class CustomImageLoading extends LeafRenderObjectWidget {
   void updateRenderObject(
       BuildContext context, covariant RenderCustomImageLoading renderObject) {
     renderObject._backgroundColor = backgroundColor ??
-        Theme.of(context).colorScheme.surfaceContainerHighest;
+        Theme.of(context).colorScheme.surface;
     renderObject._iconColor =
         iconColor ?? Theme.of(context).colorScheme.onSurfaceVariant;
     renderObject._outlineColor =
